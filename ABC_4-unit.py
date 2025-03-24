@@ -234,9 +234,9 @@ for run in range(simulationtime):
     
         for j in range(n-k+2):
     
-          if State_space[i,0] - State_space[j,0] ==  1: # Failure of working component
+          if State_space[i,0] - State_space[j,0] ==  1: # Failure of operational component
     
-            CTMC[i, j] = State_space[i,0] * working_failure_rate
+           CTMC[i, j] = (State_space[i, 0]+State_space[i, 1]) * working_failure_rate
     
           elif State_space[i, 2] - State_space[j,2] ==  1: # Repair
     
